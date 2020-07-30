@@ -147,33 +147,14 @@ Clarity UI ships with two css files, `clr-ui.min.css` for the light theme and `c
 
 #### Angular CLI Builds
 
-Consume the dark theme code in `clr-ui-dark.min.css` by adding it to your styles array in the `.angular-cli.json` file.
+Consume the dark theme code in `clr-ui-dark.min.css` by adding it to your styles array in the `angular.json` file.
 
-```
-"styles": [
-      ...
-      "../node_modules/@clr/icons/clr-icons.min.css",
-      "../node_modules/@clr/ui/clr-ui-dark.min.css",
-      ...
-  ]
-```
+<doc-demo src="/demos/themes/angular.json" />
 
 #### Webpack Builds
 
 Modify your `webpack.config.js` entry styles to consume the new `clr-ui-dark.min.css`
-
-```
-"entry": {
-    "main": [
-      "./src/main.ts"
-    ],
-    "styles": [
-      "./node_modules/@clr/icons/clr-icons.min.css",
-      "./node_modules/@clr/ui/clr-ui-dark.min.css",
-      "./src/styles.css"
-    ]
-  },
-```
+<doc-demo src="/demos/themes/webpack.js" />
 
 ## Custom Themes
 
@@ -193,7 +174,7 @@ SASS-based theming is deprecated in Clarity 3.0 and will no longer work when Cla
 
 SASS-based theming is most familiar to those who use SASS/SCSS in their own products to build CSS stylesheets. SASS acts like a superset of CSS that enables convenient nesting syntax and programming-like functionality in a CSS-based language that compiles to CSS. SASS also gives developers variables they can reuse throughout their SASS codebase.
 
-Clarity has a number of such variables. The [\_variables.clarity.scss](https://github.com/vmware/clarity/blob/master/src/clr-angular/utils/_variables.clarity.scss) file in the Clarity project can serve as a directory for where all of the variable files can be found.
+Clarity has a number of such variables. The [\_variables.clarity.scss](https://github.com/vmware/clarity/blob/master/packages/angular/projects/clr-angular/src/utils/_variables.clarity.scss) file in the Clarity project can serve as a directory for where all of the variable files can be found.
 
 It is these variables that we override in SASS to build out a new CSS file for our theme.
 
@@ -226,7 +207,7 @@ Next, we need to include the the application scss variable overrides and the Cla
 @import "../node_modules/@clr/ui/src/utils/components.clarity";
 ```
 
-##### Why is SASS-based theming going away?
+##### Why are SASS-based theming going away?
 
 Once the Clarity Angular library begins to integrate the web components from Clarity Core, SASS-based theming will no longer work. The Clarity Core web components are encapsulated within the shadow DOM. Changes to the CSS at the global level will not be able to affect shadow DOM encapsulated web components through any means outside of CSS custom properties.
 

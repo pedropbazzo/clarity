@@ -91,15 +91,15 @@ module.exports = {
     ],
     ...blocks,
   ],
-  devServer: {
-    proxy: {
+  // devServer: {
+    // proxy: {
       // Local dev server needs to proxy to CDN too
-      '/images': {
-        target: 'http://dt7zex2d2lk4u.cloudfront.net',
-        changeOrigin: true,
-      },
-    },
-  },
+      // '/images': {
+      //   target: 'http://dt7zex2d2lk4u.cloudfront.net',
+      //   changeOrigin: true,
+      // },
+    // },
+  // },
   configureWebpack: {
     resolve: {
       alias: {
