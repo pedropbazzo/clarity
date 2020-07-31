@@ -1,5 +1,5 @@
 <template>
-  <div cds-layout="vertical gap:md m-t: lg">
+  <div cds-layout="vertical gap:md m-t:lg">
     <h3 cds-text="heading medium" cds-layout="m-b:xl">What's New</h3>
     <p cds-text="title semibold">
       {{ data.version }}
